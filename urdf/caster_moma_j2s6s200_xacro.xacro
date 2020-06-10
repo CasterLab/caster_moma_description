@@ -3,14 +3,15 @@
   <xacro:property name="M_PI" value="3.1415926535897931" />
 
   <!-- caster include -->
-  <xacro:include filename = "$(find caster_description)/urdf/caster.urdf.xacro" />
-  <xacro:include filename = "$(find caster_description)/urdf/caster_body.urdf.xacro" />
+  <xacro:include filename = "$(find caster_description)/urdf/common_properties.xacro" />
+  <xacro:include filename = "$(find caster_description)/urdf/caster_v2.urdf.xacro" />
+  <xacro:include filename = "$(find caster_description)/urdf/body/caster_body_v2.urdf.xacro" />
 
   <!-- sensor include -->
   <xacro:include filename="$(find kinova_description)/urdf/j2s6s200.xacro" />
   <xacro:include filename="$(find pan_tilt_description)/urdf/pan_tilt.urdf.xacro" />
   <xacro:include filename="$(find pan_tilt_description)/urdf/kinect_v2.urdf.xacro" />
-  <xacro:include filename="$(find pan_tilt_description)/urdf/pan_tilt_neck_50mm.urdf.xacro" />
+  <!-- <xacro:include filename="$(find pan_tilt_description)/urdf/pan_tilt_neck_50mm.urdf.xacro" /> -->
 
   <!-- caster and caster_body -->
   <caster_robot/>
@@ -48,15 +49,15 @@
     <child link="realsense_coupling_link"/>
   </joint>
 
-  <sensor_d435 parent="realsense_coupling_link" prefix="camera">
+  <xacro:sensor_d435 parent="realsense_coupling_link" prefix="camera">
     <origin xyz="0.0875 0 -0.01515" rpy="0 ${M_PI/2} 0"/>
-  </sensor_d435>
+  </xacro:sensor_d435>
 
   <!-- pan tilt -->
-  <xacro:pan_tilt_neck_50mm parent="caster_body_head_link" >
+<!--   <xacro:pan_tilt_neck_50mm parent="caster_body_head_link" >
     <origin xyz="0 0 0" rpy="0 0 0" />
-  </xacro:pan_tilt_neck_50mm>
-  <xacro:pan_tilt parent="pan_tilt_neck_top" >
+  </xacro:pan_tilt_neck_50mm> -->
+  <xacro:pan_tilt parent="caster_body_head_link" >
     <origin xyz="0 0 0" rpy="0 0 0" />
   </xacro:pan_tilt>
 
