@@ -1,6 +1,6 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <launch>  
-  <param name="robot_description" command="$(find xacro)/xacro $(find caster_moma_description)/urdf/caster_moma_gen3_xacro.xacro" />
+  <param name="robot_description" command="$(find xacro)/xacro $(find caster_moma_description)/urdf/caster_moma_j2n6s200_xacro.xacro" />
 
   <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
 
