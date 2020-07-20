@@ -20,7 +20,7 @@
   </xacro:caster_body>
 
    <!-- realsense d435 -->
-  <xacro:include filename="$(find caster_moma_description)/urdf/realsense_d435.urdf.xacro" />
+  <!-- <xacro:include filename="$(find caster_moma_description)/urdf/realsense_d435.urdf.xacro" /> -->
 
   <!-- kinova 6dof arm -->
   <link name="arm_mount_link" />
@@ -32,7 +32,7 @@
   <xacro:j2n6s200 base_parent="arm_mount_link"/> 
 
   <!-- realsense -->
-  <link name="realsense_coupling_link">
+<!--   <link name="realsense_coupling_link">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
@@ -51,7 +51,7 @@
 
   <xacro:sensor_d435 parent="realsense_coupling_link" prefix="camera">
     <origin xyz="0.0875 0 -0.01515" rpy="0 ${M_PI/2} 0"/>
-  </xacro:sensor_d435>
+  </xacro:sensor_d435> -->
 
   <!-- pan tilt -->
 <!--   <xacro:pan_tilt_neck_50mm parent="caster_body_head_link" >
