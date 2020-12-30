@@ -8,7 +8,7 @@
   <xacro:include filename = "$(find caster_description)/urdf/body/caster_body_v3.urdf.xacro" />
 
   <!-- sensor include -->
-  <xacro:include filename="$(find caster_moma_description)/urdf/kinova/j2n6s200.xacro" />
+  <xacro:include filename="$(find kinova_description)/urdf/j2n6s200.xacro" />
   <xacro:include filename="$(find pan_tilt_description)/urdf/pan_tilt.urdf.xacro" />
   <xacro:include filename="$(find pan_tilt_description)/urdf/kinect_v2.urdf.xacro" />
   <!-- <xacro:include filename="$(find pan_tilt_description)/urdf/pan_tilt_neck_50mm.urdf.xacro" /> -->
